@@ -4,6 +4,6 @@
 
 ### Test Case ID: TC_CALC_01  
 **Test Description:**  
-**Preconditions:**
-**Test Steps:**
+**Preconditions:**  
+**Test Steps:**  
 **Expected Results:**

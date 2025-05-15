@@ -1,130 +1,182 @@
 # Calculator Application Test Cases    
+*Calculator Limits: 15-digit display (-999,999,999,999,999 to 999,999,999,999,999)*  
 
 ---
 
-## **1. Valid Input Tests**  
+## **1. Basic Arithmetic Operations**  
 
-### **1.1 Basic Arithmetic Operations**  
-
-#### **TC-101: Verify Addition of Positive Numbers**  
-- **Description**: Ensure the calculator correctly adds two positive integers.  
-- **Preconditions**: Calculator is open and reset.  
+### **Test Case ID:** TC-01  
+- **Description**: Verify Addition of Positive Integers.  
+- **Preconditions**: Calculator is reset; display shows `0`. Input numbers must be ≤ 999,999,999,999,999.  
 - **Test Steps**:  
   1. Enter `5`.  
   2. Press `+`.  
   3. Enter `3`.  
   4. Press `=`.  
-- **Expected Result**: `8` is displayed.  
+- **Expected Result**: `8` should be displayed.  
 
-#### **TC-102: Verify Subtraction with Negative Result**  
-- **Description**: Verify subtraction yields a negative number when the second operand is larger.  
+### **Test Case ID:** TC-02  
+- **Description**: Verify Addition of Positive and Negative Numbers.  
 - **Preconditions**: Calculator is reset.  
 - **Test Steps**:  
-  1. Enter `10`.  
-  2. Press `-`.  
-  3. Enter `15`.  
-  4. Press `=`.  
-- **Expected Result**: `-5` is displayed.  
+  1. Enter `5 + -3`.  
+  2. Press `=`.  
+- **Expected Result**: `2` should be displayed.  
 
-#### **TC-103: Verify Multiplication with Decimals**  
-- **Description**: Test multiplication with decimal inputs.  
+### **Test Case ID:** TC-03  
+- **Description**: Verify Addition of Two Negative Numbers.  
 - **Preconditions**: Calculator is reset.  
 - **Test Steps**:  
-  1. Enter `2.5`.  
-  2. Press `*`.  
-  3. Enter `4`.  
-  4. Press `=`.  
-- **Expected Result**: `10` is displayed.  
+  1. Enter `-5 + -3`.  
+  2. Press `=`.  
+- **Expected Result**: `-8` should be displayed.  
 
-#### **TC-104: Verify Division with Fractions**  
-- **Description**: Ensure division returns accurate fractional results.  
+### **Test Case ID:** TC-04  
+- **Description**: Verify Simple Subtraction (Positive Integers).  
 - **Preconditions**: Calculator is reset.  
 - **Test Steps**:  
-  1. Enter `1`.  
-  2. Press `/`.  
-  3. Enter `4`.  
-  4. Press `=`.  
-- **Expected Result**: `0.25` is displayed.  
+  1. Enter `10 - 4`.  
+  2. Press `=`.  
+- **Expected Result**: `6` should be displayed.  
+
+### **Test Case ID:** TC-05  
+- **Description**: Verify Subtraction with Zero.  
+- **Preconditions**: Calculator is reset.  
+- **Test Steps**:  
+  1. Enter `5 - 0`.  
+  2. Press `=`.  
+- **Expected Result**: `5` should be displayed.  
+
+### **Test Case ID:** TC-06  
+- **Description**: Verify Subtraction of Negative Numbers.  
+- **Preconditions**: Calculator is reset.  
+- **Test Steps**:  
+  1. Enter `-5 - -3`.  
+  2. Press `=`.  
+- **Expected Result**: `-2` should be displayed.  
 
 ---
 
-### **1.2 BODMAS/PEMDAS Rule Validation**  
+## **2. Decimal and Large Number Operations**  
 
-#### **TC-105: Verify Operator Precedence (Multiplication Before Addition)**  
-- **Description**: Validate that `2 + 3 * 4` follows BODMAS rules.  
+### **Test Case ID:** TC-07  
+- **Description**: Verify Addition of Decimal Numbers.  
+- **Preconditions**: Calculator is reset.  
+- **Test Steps**:  
+  1. Enter `2.5 + 3.1`.  
+  2. Press `=`.  
+- **Expected Result**: `5.6` should be displayed.  
+
+### **Test Case ID:** TC-08  
+- **Description**: Verify Subtraction with Decimals.  
+- **Preconditions**: Calculator is reset.  
+- **Test Steps**:  
+  1. Enter `10.75 - 2.25`.  
+  2. Press `=`.  
+- **Expected Result**: `8.5` should be displayed.  
+
+### **Test Case ID:** TC-09  
+- **Description**: Verify Multiplication of Two Decimals.  
+- **Preconditions**: Calculator is reset.  
+- **Test Steps**:  
+  1. Enter `1.5 * 2.5`.  
+  2. Press `=`.  
+- **Expected Result**: `3.75` should be displayed.  
+
+### **Test Case ID:** TC-10  
+- **Description**: Verify Division Resulting in Decimal.  
+- **Preconditions**: Calculator is reset.  
+- **Test Steps**:  
+  1. Enter `5 / 2`.  
+  2. Press `=`.  
+- **Expected Result**: `2.5` should be displayed.  
+
+### **Test Case ID:** TC-11  
+- **Description**: Verify Division of Negative Numbers.  
+- **Preconditions**: Calculator is reset.  
+- **Test Steps**:  
+  1. Enter `-10 / -2`.  
+  2. Press `=`.  
+- **Expected Result**: `5` should be displayed.  
+
+### **Test Case ID:** TC-12  
+- **Description**: Verify Multiplication of Large Numbers (Near 15-Digit Limit).  
+- **Preconditions**: Calculator is reset.  
+- **Test Steps**:  
+  1. Enter `999,999,999,999,999 * 2`.  
+  2. Press `=`.  
+- **Expected Result**: Overflow error or `1,999,999,999,999,998` if supported.  
+
+---
+
+## **3. BODMAS/Parentheses and Complex Operations**  
+
+### **Test Case ID:** TC-13  
+- **Description**: Verify Operator Precedence (Multiplication Before Addition).  
 - **Preconditions**: Calculator is reset.  
 - **Test Steps**:  
   1. Enter `2 + 3 * 4`.  
   2. Press `=`.  
-- **Expected Result**: `14` is displayed (not `20`).  
+- **Expected Result**: `14` should be displayed (not `20`).  
 
-#### **TC-106: Verify Parentheses Override Precedence**  
-- **Description**: Test if parentheses force addition before multiplication.  
+### **Test Case ID:** TC-14  
+- **Description**: Verify Parentheses Override Precedence.  
 - **Preconditions**: Calculator is reset.  
 - **Test Steps**:  
   1. Enter `(2 + 3) * 4`.  
   2. Press `=`.  
-- **Expected Result**: `20` is displayed.  
+- **Expected Result**: `20` should be displayed.  
 
----
-
-## **2. Invalid Input Tests**  
-
-### **2.1 Non-Numeric Input Handling**  
-
-#### **TC-201: Verify Error on Alphabetic Input**  
-- **Description**: Ensure the calculator rejects non-numeric characters (e.g., letters).  
+### **Test Case ID:** TC-15  
+- **Description**: Verify Nested Parentheses.  
 - **Preconditions**: Calculator is reset.  
 - **Test Steps**:  
-  1. Press keys `A + 2`.  
-- **Expected Result**: Error message (e.g., "Invalid input").  
-
-#### **TC-202: Verify Error on Special Characters**  
-- **Description**: Test handling of symbols like `@`, `#`, etc.  
-- **Preconditions**: Calculator is reset.  
-- **Test Steps**:  
-  1. Press `@ + 5`.  
-- **Expected Result**: Error message displayed.  
-
----
-
-### **2.2 Division Edge Cases**  
-
-#### **TC-203: Verify Division by Zero Error**  
-- **Description**: Ensure division by zero shows an error (not crash).  
-- **Preconditions**: Calculator is reset.  
-- **Test Steps**:  
-  1. Enter `5`.  
-  2. Press `/`.  
-  3. Enter `0`.  
-  4. Press `=`.  
-- **Expected Result**: "Cannot divide by zero" error.  
-
-#### **TC-204: Verify Division with Zero Numerator**  
-- **Description**: Test `0 / X` returns `0`.  
-- **Preconditions**: Calculator is reset.  
-- **Test Steps**:  
-  1. Enter `0 / 5`.  
+  1. Enter `2 * (3 + (4 / 2))`.  
   2. Press `=`.  
-- **Expected Result**: `0` is displayed.  
+- **Expected Result**: `10` should be displayed.  
 
 ---
 
-## **3. Additional Scenarios**  
+## **4. Invalid Input and Edge Cases**  
 
-#### **TC-301: Verify Continuous Operations (Chaining)**  
-- **Description**: Test sequential operations without resetting (e.g., `2 + 3 - 1`).  
+### **Test Case ID:** TC-16  
+- **Description**: Verify Division by Zero Error.  
 - **Preconditions**: Calculator is reset.  
 - **Test Steps**:  
-  1. Enter `2 + 3 - 1`.  
+  1. Enter `5 / 0`.  
   2. Press `=`.  
-- **Expected Result**: `4` is displayed.  
+- **Expected Result**: "Cannot divide by zero" error should be displayed.  
 
-#### **TC-302: Verify Clear/Reset Functionality**  
-- **Description**: Ensure pressing `C` resets the calculator.  
-- **Preconditions**: Calculator displays `5 + 3`.  
+### **Test Case ID:** TC-17  
+- **Description**: Verify Multiple Decimal Points Handling.  
+- **Preconditions**: Calculator is reset.  
 - **Test Steps**:  
-  1. Press `C`.  
-- **Expected Result**: Display shows `0` or blank.  
+  1. Enter `2.5.6`.  
+- **Expected Result**: Error message or ignored input.  
+
+### **Test Case ID:** TC-18  
+- **Description**: Verify Leading Zero Input.  
+- **Preconditions**: Calculator is reset.  
+- **Test Steps**:  
+  1. Enter `0005`.  
+  2. Press `=`.  
+- **Expected Result**: `5` should be displayed.  
+
+### **Test Case ID:** TC-19  
+- **Description**: Verify Leading Zeros in Decimals.  
+- **Preconditions**: Calculator is reset.  
+- **Test Steps**:  
+  1. Enter `0005.500`.  
+  2. Press `=`.  
+- **Expected Result**: `5.5` should be displayed.  
+
+### **Test Case ID:** TC-20  
+- **Description**: Verify Input Exceeding 15-Digit Limit.  
+- **Preconditions**: Calculator is reset.  
+- **Test Steps**:  
+  1. Enter `1,000,000,000,000,000` (16 digits).  
+- **Expected Result**: Error message or input truncation.  
 
 ---
+  
+ 

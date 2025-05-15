@@ -341,7 +341,7 @@
 
 ---
 
-<center>
+
  **End of Document**  
- </center>
+ 
 

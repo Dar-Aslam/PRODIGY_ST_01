@@ -3,4 +3,4 @@
 ***
 
 ## TASK-01:  
-**Write Test cases for a simple calculator application**
+**Test cases for a simple calculator application**

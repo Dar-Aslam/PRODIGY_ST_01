@@ -16,19 +16,20 @@
 ---
 
 ## **1. Desktop - Windows**  
-### **Chrome (v124)**  
+### **Chrome (v136)**  
 - **Layout:** Fully responsive, no overflow issues  
 - **Links:** All navigation links work correctly (Home, About, Products, Contact)  
 - **Functionality:** "Add to Cart" and form submission features operate as expected  
-*Screenshot: [Insert screenshot showing correct layout in Chrome on Windows]*  
+*Screenshot:* ![windows-chrome](Images/windows-chrome.png)
 
-### **Firefox (v125)**  
+### **Firefox (v138)**  
 - **Layout:** Same as Chrome  
 - **Minor Issue:** Headings appear slightly bolder  
-*Screenshot: [Insert Firefox-Windows screenshot showing font weight difference]*  
+*Screenshot:* ![windows-firefox](Images/windows-firefox.png)  
 
-### **Edge (v124)**  
-- **Identical to Chrome** — no visual or functional issues found  
+### **Edge (v136)**  
+- **Identical to Chrome** — no visual or functional issues found 
+*Screenshot:* ![windows-edge](Images/windows-edge.png)
 
 ---
 
@@ -36,7 +37,7 @@
 ### **Safari (v17)**  
 - **Layout:** Proper rendering across all sections  
 - **Minor Issue:** Slight (0.2s) delay in hover animations  
-*Screenshot: [Insert Safari-macOS animation delay capture]*  
+  
 
 ### **Chrome, Firefox, Edge**  
 - Behaves the same as on Windows  
@@ -47,15 +48,15 @@
 ### **Chrome, Firefox, Edge**  
 - **Layout:** Responsive in both portrait and landscape modes  
 - **Issue:** Footer icons appear too small in portrait orientation  
-*Screenshot: [Insert screenshot showing compressed footer icons]*  
+  
 
 ---
 
-## **4. Mobile - Android (Google Pixel 7)**  
-### **Chrome (v124)**  
+## **4. Mobile - Android (samsung z fold)**  
+### **Chrome**  
 - **Navigation:** Hamburger menu opens and closes properly  
 - **Issue:** "Add to Cart" button text wraps into two lines on narrow screens  
-*Screenshot: [Insert Pixel 7 screenshot showing wrapped button]*  
+*Screenshot:* ![Android-samsung](Images/Android-samsung.png)
 
 ### **Firefox, Edge**  
 - Same as Chrome  
@@ -67,22 +68,21 @@
 ### **Safari**  
 - **Touch Controls:** All buttons and links respond properly  
 - **Issue:** Extra whitespace appears in the header when in landscape mode  
-*Screenshot: [Insert screenshot highlighting header space]*  
+  
 
 ### **Chrome, Edge**  
 - No additional issues found  
 
 ---
 
-## **6. iPhone - iOS (iPhone 15, iOS 17)**  
+## **6. iPhone - iOS (iPhone 13, iOS 18)**  
 ### **Safari**  
 - **Mobile Menu:** Opens smoothly with animation  
 - **Issue:** Product images flicker occasionally during scroll  
-*Screenshot: [Insert GIF/video showing image flicker]*  
-
+*Screenshot:* ![iphone-safari](Images/iphone-safari.png)
 ### **Chrome, Edge**  
 - **No flickering observed**  
-
+*screenshot:* ![iphone-chrome](Images/iphone-chrome.jpg)
 ---
 
 ## **Critical Issues Summary**  
@@ -120,8 +120,8 @@
 # Cross-Browser Testing Tools Used
 
 ## 1. Developer Tools
-- **Chrome DevTools** (`F12`)
-- **Firefox Developer Tools** (`F12`)
+- **Chrome DevTools** 
+- **Firefox Developer Tools** 
 - **Safari Web Inspector** (Enabled via: Safari → Preferences → Advanced → Show Develop menu)
 
 ## 2. Cloud Testing
